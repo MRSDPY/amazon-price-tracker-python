@@ -4,7 +4,7 @@ import bs4 as bs
 import time
 
 
-driver = webdriver.Firefox(executable_path='path_for_firefox_driver')
+driver = webdriver.Firefox(executable_path='G:/software/geckodriver/geckodriver.exe')
 
 driver.get("https://www.amazon.in")
 
