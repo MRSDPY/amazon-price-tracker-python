@@ -5,13 +5,13 @@ import sys
 class UserAgent:
     official_bot = [
         "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
-        # "Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)",
-        # "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)",
-        # "DuckDuckBot/1.0; (+http://duckduckgo.com/duckduckbot.html)",
-        # "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
-        # "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)",
-        # "Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
-        # "ia_archiver (+http://www.alexa.com/site/help/webmasters; crawler@alexa.com)",
+        "Mozilla/5.0 (compatible; Bingbot/2.0; +http://www.bing.com/bingbot.htm)",
+        "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)",
+        "DuckDuckBot/1.0; (+http://duckduckgo.com/duckduckbot.html)",
+        "Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)",
+        "Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)",
+        "Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)",
+        "ia_archiver (+http://www.alexa.com/site/help/webmasters; crawler@alexa.com)",
     ]
 
     mobile_agents = [
@@ -107,7 +107,7 @@ class UserAgent:
         if type == "bot":
             for v in UserAgent.official_bot:
                 print(f"{v}")
-        elif type == "destop":
+        elif type == "desktop":
             for v in UserAgent.desktop_agents:
                 print(f"{v}")
         elif type == "mobile":

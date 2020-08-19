@@ -31,7 +31,7 @@ def scrape(p_name):
     final_whole_data = {}
 
     ua = UserAgent()
-    bot = ua.get(random.choice(["bot", "desktop"]))
+    bot = ua.get("desktop")
 
     count = 0
     products = {}
@@ -47,9 +47,18 @@ def scrape(p_name):
     main_page = proxy.get_session("post", f"https://www.amazon.in/s?k={search_topic}", headers_=headers)
 
     page = bs.BeautifulSoup(main_page.content, 'html.parser')
-    print(page)
 
     page_link = page.find_all("a", class_="a-link-normal a-text-normal")
+
+    # Image = page.find_all("img", class_="s-image")
+    # image_data = {}
+    # i_count = 0
+    # for i in Image:
+    #     image_data[i_count] = {
+    #         "src": i['src'],
+    #         "name": i['alt'],
+    #     }
+    #     i_count += 1
 
     p = re.compile(r"[\w]+:/+/+[www]*.amazon.in/+gp/+video/+")
 
@@ -65,7 +74,7 @@ def scrape(p_name):
     for i in range(len(loop_data)):
         match = p.match(loop_data[i]["url"])
         if match is None:
-            bot = ua.get(random.choice(["bot", "desktop"]))
+            bot = ua.get("desktop")
             headers = {
                 'User-Agent': bot,
             }
