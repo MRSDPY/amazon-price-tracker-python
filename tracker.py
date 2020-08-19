@@ -1,4 +1,4 @@
-from use_bs import scrape
+from use_bs4 import scrape
 import json
 import smtplib
 import os
@@ -40,7 +40,7 @@ product_name = input("Enter product name : ")
 price_range = input("Enter price range (e.x: <20000 and >20000) : ")
 price_con = price_range[0]
 
-# scrape(product_name)
+scrape(product_name)
 
 with open("product_data.json", "r") as f:
     data = f.read()
