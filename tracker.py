@@ -125,5 +125,5 @@ make_string += """
 </html>
 """
 
-send_mail(host_name="smtp-relay.sendinblue.com", smtp_id=os.environ.get("Email"), smtp_pass=os.environ.get("Email_pass")
-          , to_email=["sdankhara1@gmail.com"], html_contact=make_string)
+send_mail(host_name="Your_SMTP_Host", smtp_id=os.environ.get("Email"), smtp_pass=os.environ.get("Email_pass")
+          , to_email=["List_Of_Emails"], html_contact=make_string)
