@@ -26,12 +26,22 @@ class Proxy:
                 continue
 
     def get_session(self, methods_, url_, headers_):
+        proxy_ = None
+        r = None
         while True:
             try:
-                proxy = {"https": random.choice(self.proxies)}
-                r = requests.request(methods_, url_, proxies=proxy, timeout=5, headers=headers_)
-                print("[-] Get Open IP Done !!!!")
-                break
+                if proxy_ is None:
+                    proxy = {"https": random.choice(self.proxies)}
+                    r = requests.request(methods_, url_, proxies=proxy, timeout=5, headers=headers_)
+                    print("[-] Get Open IP Done !!!!")
+                    proxy_ = proxy
+                    break
+                else:
+                    try:
+                        r = requests.request(methods_, url_, proxies=proxy_, timeout=5, headers=headers_)
+                    except Exception as e:
+                        proxy_ = None
+                    break
             except Exception as e:
                 pass
         return r
